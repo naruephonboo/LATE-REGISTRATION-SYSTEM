@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300&display=swap" rel="stylesheet">
+	
+		<meta charset="utf-8">
+			<title>คำร้องขอเพิ่ม-ถอนรายวิชา</title>
+	
+	<style>
+
+	.header {
+    overflow: hidden;
+    padding: 50px 50px;
+    background-color: white;
+    background-image: url('header.png');
+  	font-size: 35px;
+  	color: #CC0000;
+  	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+   }
+	.navbar {
+  		overflow: hidden;
+  		background-color: #333;
+  		color: white;
+  	}
+
+	.header-right {
+  		float: right;
+			}
+
+	body {
+		font-family:IBM Plex Sans Thai Looped;
+		background-color: #EEEEEE;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+		 }
+
+	section {
+  		display: -webkit-flex;
+  		display: flex;
+			}
+
+	nav {
+  		float: left;
+  		width: 40%;
+  		background: #D3D3D3;
+  		padding: 20px;
+  		max-width: 160px;
+    	margin: 0;
+    	}
+
+    nav ul {
+  		list-style-type: none;
+  		padding: 0;
+		}
+
+	.button {
+  		background-color: #DDDDDD;
+  		cursor: pointer;
+  		width: 100%;
+  		border: none;
+  		padding: 10px 10px;
+  		color: black;
+  		display: inline-block;
+  		margin: 15px 0px;
+  		position: relative;
+  		text-decoration: none;
+  		border-radius: 15px;
+  		border-width: 10px;
+  		text-align: center;  		
+  		font-size: 1rem;
+  		font-family : IBM Plex Sans Thai Looped;
+			}
+
+	.button-select {
+  		background-color: #BBBBBB;
+  		cursor: pointer;
+  		width: 100%;
+  		border: none;
+  		padding: 10px 10px;
+  		color: black;
+  		display: inline-block;
+  		margin: 15px 0px;
+  		position: relative;
+  		text-decoration: none;
+  		border-radius: 15px;
+  		border-width: 10px;
+  		text-align: center;  		
+  		font-size: 1rem;
+  		font-family : IBM Plex Sans Thai Looped;
+			}
+	
+	.button:hover {
+  		background-color: #CCCCCC;
+					}
+
+	.ybutton {
+  		background-color: #04AA6D ; /* Green */
+ 		border: none;
+  		color: white;
+  		padding: 16px;
+  		text-align: center;
+  		text-decoration: none;
+  		display: inline-block;
+  		font-size: 16px;
+  		margin: 4px 2px;
+  		cursor: pointer;}
+  	.ybuttonG {border-radius: 12px;}
+  	.ybutton:hover {
+  		background-color: #46a049;
+					}
+
+  	.xbutton {
+  		background-color: #f44336 ; /* Red */
+ 		border: none;
+  		color: white;
+  		padding: 16px;
+  		text-align: center;
+  		text-decoration: none;
+  		display: inline-block;
+  		font-size: 16px;
+  		margin: 4px 2px;
+  		cursor: pointer;}
+  	.xbuttonR {border-radius: 12px;}
+  	.xbutton:hover {
+  		background-color: #da190b;
+					}
+	
+  	article {
+  		float: left;
+  		padding: 30px;
+  		width: 285%;
+  		background-color: #f1f1f1;
+			}
+	h3{
+        font-size: 25px;
+        background-color: #e8e8e8;
+        text-align: center;
+    }
+
+    h5{
+		border: 1px solid black;
+		background-color: #d58be7;
+    	font-size: 20px;
+    	text-align: left;
+    }
+
+	h6{
+		font-size: 15px;
+		padding-left: 5px;
+		margin-left: 10px;
+		margin-right: 10px;
+
+	}
+
+    footer {
+  		background-color: #777;
+  		padding: 10px;
+  		text-align: center;
+  		color: white;
+			}
+
+	</style>
+	</head>
+	<body onload="loadDoc()">
+	<div class="header">
+			<img src="TULogo.png" alt="LOGO" width="900" style="vertical-align: text-top;"><br>
+	</div>
+	<div class="navbar">
+     		<label id="userInfoBar" style="font-size: 1.3rem; float: right;">อาจารย์ คณะวิทยาศาสตร์และเทคโนโลยี</label>
+     		
+    </div>
+				
+	
+	<section>
+    	<nav>
+			<h2> 
+				<button id="wait" type="button" onclick="wait()" class="button">รอการอนุมัติ</button>
+				<button id="approve" type="button" onclick="approve()" class="button">อนุมัติแล้ว</button>
+				<button id="cancel" type="button" onclick="cancel()" class="button">ยกเลิกการอนุมัติ</button><br><br><br><br><br><br>
+				<button type="button" onclick="window.location.href='U11'" class="button">กลับหน้าหลัก</button></h2>
+		</nav>
+		<form action="U11.html" method="GET">
+
+
+		<article>
+     		<h3>รายการคำร้องขอเพิ่ม-ถอนรายวิชาของนักศึกษา</h3>
+			
+				<form action="/action_page.php">
+  				
+
+				<h5>ข้อมูลส่วนตัว</h5>
+				
+				<h6>
+				<label >วันที่:</label><label id="date"style="margin-left:10px;"></label><br>
+
+				<label >ชื่อ - นามสกุล: </label></label><label id="name" style="margin-left:10px ;"></label><label id="surname" style="margin-left:15px ;"></label><br>
+
+				<label >เลขทะเบียน: </label><label id="snumber" style="margin-left:10px ;"></label><br>
+				
+				<label >ชั้นปีที่: </label><label id="year" style="margin-left:10px ;"></label><br>
+				
+				<label >สาขาวิชา: </label><label id="field" style="margin-left:10px ;"></label><br>
+				
+				<label >อาจารย์ที่ปรึกษา: </label><label id="professor" style="margin-left:10px ;"></label><br>
+				
+				<label >บ้านเลขที่: </label><label id="address" style="margin-left:10px ;"></label><br>
+				
+				<label >หมู่ที่: </label><label id="moo" style="margin-left:10px ;"></label><br>
+				
+				<label >ตำบล: </label><label id="tumbol" style="margin-left:10px ;"></label><br>
+
+				<label >อำเภอ: </label><label id="amphur" style="margin-left:10px ;"></label><br>
+				
+				<label >จังหวัด: </label><label id="county" style="margin-left:10px ;"></label><br>
+				
+				<label >รหัสไปรษณีย์: </label><label id="postcode" style="margin-left:10px ;"></label><br>
+				
+				<label >เบอร์โทรศัพท์มือถือ: </label><label id="sphone" style="margin-left:10px ;"></label><br>
+				
+				<label >เบอร์โทรศัพท์บ้าน: </label><label id="hphone" style="margin-left:10px ;"></label><br>
+				</h6>
+
+				<h5>รายละเอียดการเพิ่ม-ถอนรายวิชา</h5>
+				
+				<h6>
+				<!--<label style="margin-left:100px ;">รหัสวิชา</label><label>ชื่อวิชา</label><label>Section</label><label>วัน/เวลา</label><label>หน่วยกิต</label><label>ชื่อผู้สอน </label><label>ผู้สอนอนุญาต</label><br>--->
+				<label >รายวิชาที่เพิ่ม: </label><label id="add_subject" style="margin-left:10px ;"></label><br>
+
+ 				<label >รายวิชาที่ถอน: </label><label id="reject_subject" style="margin-left:10px ;"></label><br>
+
+ 				<label >เหตุผลที่เพิ่ม-ถอนรายวิชา: </label><label id="reason" style="margin-left:10px ;"></label><br>
+				</h6>
+  				
+				
+				
+				
+				<div id="mybutton">
+				<center><submit type="submit" style="font-family: IBM Plex Sans Thai Looped;" class="ybutton ybuttonG" onclick="return Confirm()" >อนุมัติ</submit>&nbsp;&nbsp;&nbsp;&nbsp;
+  						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<submit type="submit" style="font-family: IBM Plex Sans Thai Looped;" class="xbutton xbuttonR" onclick="return Cancel()">ไม่อนุมัติ</submit></center>
+				</div>
+  				
+		</article>		
+		</form>
+		
+  	</section>
+
+  		<footer>
+     		<p align="right">Group1-100001<p>
+     	</footer>
+	</body>
+	<script src="controller_professer.js">
+
+	</script>
+	<script src="userDetail.js"></script>
+</html>

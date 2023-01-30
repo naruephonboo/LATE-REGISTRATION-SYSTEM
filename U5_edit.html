@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  
+    <head >
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300&display=swap" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<title>คำร้องขอเพิ่ม-ถอนรายวิชา</title>
+		<style>
+			body {
+				font-family: IBM Plex Sans Thai Looped;
+	  			background-color: #D3D3D3;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+			}
+			input{
+	            font-family:kanit;
+	            border: 5;
+	                }
+	        textarea{
+	        	font-family:kanit;
+	            border: 5;
+	        }
+			button{ 
+	            background-color: gray;
+	            padding: 5px 10px;
+	            font-size: 1.3rem;
+	           position: relative;
+	        }
+	        td{
+	        	text-align: center;
+	        	font-size: 100%;
+	        }
+	        tr:hover {
+				background-color: #c1c1c1;
+			}
+			th {
+				margin:auto;
+				text-align: center;
+				background-color: #c1c1c1;
+			}
+	        input.table{
+	        	background-color: #c1c1c1;
+	        }
+	        label2{
+	        	color: black;
+                display: inline-block;
+                width: 270px;
+                margin-bottom: 10px;
+                }
+            label1{
+            	color: red;
+            }
+            h1{
+            	font-size: 50px;
+            }
+            h3{
+            	font-size: 25px;
+            	background-color: #e8e8e8;
+            }
+            .header {
+    			overflow: hidden;
+    			padding: 50px 50px;
+    			background-color: white;
+    			background-image: url('header.png');
+  				font-size: 35px;
+  				color: #CC0000;
+  				background-repeat: no-repeat;
+          		background-attachment: fixed;
+          		background-size: 100%;
+   			}
+  			nav {
+  				float: left;
+  				width: 40%;
+  				background: #D3D3D3;
+  				padding: 20px;
+  				max-width: 160px;
+    			margin: 0;
+
+			}
+			nav ul {
+  				list-style-type: none;
+  				padding: 0;
+			}
+			article {
+  				float: left;
+  				padding: 20px;
+  				width: 100%;
+  				background-color: #f1f1f1;
+			}
+			footer {
+  				background-color: #777;
+  				padding: 10px;
+  				text-align: center;
+  				color: white;
+			}
+			section {
+  				display: -webkit-flex;
+  				display: flex;
+			}
+			.button-nav { 
+	            background-color: #FFD13F;
+	            width: 85%;
+	            padding: 10px 10px;
+	            font-size: 1.3rem;
+	           	position: relative;
+	           	border-radius: 15px;
+	           	border: none;
+	           	color: black;
+    			appearance: button;
+    			text-decoration: none;
+    			color: initial;
+    			text-align: center;
+	        }
+	        .button-select { 
+	            background-color: #BBBBBB;
+	            width: 85%;
+	            padding: 10px 10px;
+	            font-size: 1 rem;
+	           	position: relative;
+	           	border-radius: 15px;
+	           	border-width: 10px;
+	           	border-color: #AA0000;
+	           	color: black;
+    			appearance: button;
+    			text-decoration: none;
+    			color: initial;
+    			text-align: center;
+	        }
+	        .navbar {
+  				overflow: hidden;
+  				background-color: #333;
+  				color: white;
+			}
+		</style>
+     </head>
+     <body onload="loadDoc()">
+     	<div class="header">
+     		<img src="TUlogo.png" alt="logo" width="900" style="vertical-align: text-top;"><br>
+
+     	</div>
+     	     	<div class="navbar">
+     		<label id="userInfoBar" style="font-size: 1.3rem; float: right;">นักศึกษา คณะวิทยาศาสตร์และเทคโนโลยี</label>
+     		
+     	</div>
+     	<section>
+     		<nav>
+  
+     			<a href="U2.html" class="button-nav" style="font-size: 15px;">กลับหน้าหลัก</a>
+     			
+     		</nav>
+     		<article>
+     			<form id="form">
+     			<p align="center" style="background-color: #c1c1c1;" ><b style="font-size: 40px">คำร้องขอเพิ่ม-ถอนรายวิชา</b><br>
+				<b style="font-size: 25px">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต </b></p>
+				<hr width=100% color="black" size="1">
+				<font size="3"><p><label1>* </label1>แทนบังคับกรอกข้อมูล</p></font>
+				<font size="6">
+				<label ><b>แก้ไขแบบฟอร์มของนักศีกษา :</b></label><label id='snumber'><b></b></label>
+				<font size="4">
+				<p align="right">วันที่ :<label id="date"></label></p>
+				<h3 >ประวัตินักศึกษา</h3>
+				<p><label2>ชื่อ</label2><label id="name"></label></p>
+				<p><label2>นามสกุล</label2><label id="surname"></label></p>
+				<label2>เลขทะเบียน</label2><label id='snumber2'><b></b></label>
+				&emsp; ชั้นปีที่<label1>* </label1>&nbsp;
+				<select id="year" required>
+					<option></option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+				</select>
+				<p><label2>สาขาวิชา<label1>* </label1></label2><input type="text" id="field" size="70" 
+					onKeyUp="if(!(isNaN(this.value))) { alert('กรุณากรอกตัวอักษร'); this.value='';}"/
+					title="กรอกตัวอักษรเท่านั้น" title="สาขาวิชาในคณะวิทยาศาสตร์และเทคโนโลยีและกรอกตัวอักษรเท่านั้น" required></p>
+				<p><label2>อาจารย์ที่ปรึกษา<label1>* </label1></label2> <input type="text" id="professer" size="70" 
+					onKeyUp="if(!(isNaN(this.value))) { alert('กรุณากรอกตัวอักษร'); this.value='';}"/  
+					title="กรอกตัวอักษรเท่านั้น" required></p>
+				<hr width=100% color="black" size="1">
+				<h3>ที่อยู่ที่สามารถติดต่อได้ทางไปรษณีย์ </h3>
+				<p><label2>บ้านเลขที่<label1>* </label1></label2> <input type="text" id="address" size="30" 
+					onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"/ 
+					title="กรอกตัวเลขเท่านั้น" required></p> 
+				<p><label2>หมู่ที่<label1>* </label1></label2> <input type="text" id="moo" size="30" 
+					onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"/ 
+					title="กรอกตัวเลขเท่านั้น" required></p> 
+				<p><label2>ตำบล<label1>* </label1></label2> <input type="text" id="tumbol" size="30" 
+					onKeyUp="if(!(isNaN(this.value))) { alert('กรุณากรอกตัวอักษร'); this.value='';}"/ 
+					title="กรอกตัวอักษรเท่านั้น" required></p> 
+				<p><label2>อำเภอ<label1>* </label1></label2> <input type="text" id="amphur" size="30" 
+					onKeyUp="if(!(isNaN(this.value))) { alert('กรุณากรอกตัวอักษร'); this.value='';}"/ 
+					title="กรอกตัวอักษรเท่านั้น" required></p> 
+				<p><label2>จังหวัด<label1>* </label1></label2> <input type="text" id="county" size="30" 
+					onKeyUp="if(!(isNaN(this.value))) { alert('กรุณากรอกตัวอักษร'); this.value='';}"/ 
+					title="กรอกตัวอักษรเท่านั้น" required></p> 
+				<p><label2>รหัสไปรษณีย์<label1>* </label1></label2><input type="text" id="postcode" size="30"
+					onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"/ 
+					pattern="[0-9]{5}" title="กรุณากรอกรหัสไปรษณีย์ 5 หลักให้ถูกต้อง" required></p>
+				<p><label2>โทรศัพท์มือถือ<label1>* </label1></label2> <input type="text" id="sphone" size="30"			onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"/ 
+					pattern="0[0-9]{9}" title="กรุณากรอกเบอร์โทรศัพท์ให้ครบ 10 หลักและขึ้นต้นด้วย 0" required></p>
+				<p><label2>โทรศัพท์บ้าน(ถ้ามี)</label2> <input type="text" id="hphone" size="30" 
+					onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"/ 
+					pattern="01[0-9]{8}" title="กรุณากรอกเบอร์โทรศัพท์บ้านให้ครบ 10 หลัก และขึ้นต้นด้วย 01"></p>
+		
+				<hr width=100% color="black" size="1">
+				<h3>รายละเอียดการเพิ่ม-ถอนรายวิชา</h3>
+		
+
+				<div class="form-group row" style="margin-bottom: 20px;">
+		
+					<label2 for="add_subject">จำนวนรายวิชาที่ต้องการขอเพิ่ม<label1>* </label1></label2>
+					<input type="button"style="width: 40px;" id="removeToAdd" value=->
+					<input type="add_subject" id="add_subject" style="width: 50px; margin: 10px; text-align: center;" disabled >
+					<input type="button"style="width: 40px;" id="addToAdd" value=+>
+		
+				<div>
+					<table class="table" style="width:100%">
+					<thead class="thead-dark" style="height: 20px">
+						<tr>
+							<th style="font-size: 100%;" scope="col">ลำดับ</th>
+							<th style="font-size: 100%;" scope="col">รหัสวิชา</th>
+							<th style="font-size: 100%;" scope="col">ชื่อวิชา</th>
+							<th style="font-size: 100%;" scope="col">Section</th>
+							<th style="font-size: 100%;" scope="col">วัน/เวลา</th>
+							<th style="font-size: 100%;" scope="col">หน่วยกิต</th>
+							<th style="font-size: 100%;" scope="col">ชื่อผู้สอน</th>
+							<th style="font-size: 100%;" scope="col">ผู้สอนอนุญาต</th>
+						</tr>
+					</thead>
+					<tbody id="add_table" class="form-group row">
+					
+					</tbody>
+				
+					</table>
+				</div>
+		
+				<label2 for="add_subject">จำนวนรายวิชาที่ต้องการขอถอน<label1>* </label1></label2>
+				<input type="button" style="width: 40px;" id="removeToDel" value=->
+				<input type="del_subject" id="del_subject" style="width: 50px; margin: 10px; text-align: center;" disabled >
+				<input type="button"style="width: 40px;" id="addToDel" value=+>
+		
+				<div>
+					<table class="table" style="width:100%">
+						<thead class="thead-dark" style="height: 20px">
+						<tr>
+							<th style="font-size: 100%;" scope="col">ลำดับ</th>
+							<th style="font-size: 100%;" scope="col">รหัสวิชา</th>
+							<th style="font-size: 100%;" scope="col">ชื่อวิชา</th>
+							<th style="font-size: 100%;" scope="col">Section</th>
+							<th style="font-size: 100%;" scope="col">วัน/เวลา</th>
+							<th style="font-size: 100%;" scope="col">หน่วยกิต</th>
+							<th style="font-size: 100%;" scope="col">ชื่อผู้สอน</th>
+							<th style="font-size: 100%;" scope="col">ผู้สอนอนุญาต</th>
+						</tr>
+					</thead>
+					<tbody id="del_table" class="form-group row">
+					
+					</tbody>
+				
+					</table>
+			
+				</div>
+
+				<div class="form-group">
+				<p>เหตุผลที่ขอเพิ่ม-ถอนรายวิชา<label1>* </label1></p> 
+				<textarea class="form-control" id="reason"cols="100" rows="4" required></textarea>
+				</div>
+				<br><label>เอกสารที่ต้องการแนบ</label><br>
+				<label for="myfile">Select a file:</label>
+  				<input type="file" id="myfile" name="myfile"><br><br>
+				<div align="center"><br><button type="sumbit" id="submit" class="btn" onclick="return Edit()" >แก้ไข้ข้อมูล</button></div><br><br>
+				<!--<div align="center"><button type="botton" onclick="Check()" >ส่งข้อมูล</button></div><br><br>-->
+		
+				<br><br>
+     			</font>
+     			</form>
+     		</article>
+     	</section>
+     	<footer>
+     		<p align="right">Group1-100001<p>
+     	</footer>
+     	
+    </body>
+    <script src="controller_u5.js"></script>
+    <script src="userDetail.js"></script>
+
+</html>

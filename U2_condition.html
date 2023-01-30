@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>คำร้องขอเพิ่ม-ถอนรายวิชา</title>
+    <style>
+        .div1 {
+            background-color: whitesmoke;
+            width: 1000px;
+            padding-right: 100px;
+            padding-left: 100px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin: 0 auto;
+            line-height: 2;
+        }
+        
+        body {
+            font-family: IBM Plex Sans Thai Looped;
+            background-color: #D3D3D3;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        
+        input {
+            font-family: kanit;
+            border: 0;
+        }
+        
+        textarea {
+            font-family: kanit;
+            border: 0;
+        }
+        
+        button {
+            background-color: gray;
+            padding: 5px 10px;
+            font-size: 1.3rem;
+            position: relative;
+        }
+        
+        td {
+            text-align: center;
+            font-size: 100%;
+        }
+        
+        tr:hover {
+            background-color: #c1c1c1;
+        }
+        
+        th {
+            margin: auto;
+            text-align: center;
+            background-color: #c1c1c1;
+        }
+        
+        input.table {
+            background-color: #c1c1c1;
+        }
+        
+        label2 {
+            color: black;
+            display: inline-block;
+            width: 150px;
+            margin-bottom: 10px;
+        }
+        
+        label1 {
+            color: black;
+            display: inline-block;
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        
+        label {
+            font-size: 20px;
+        }
+        
+        h3 {
+            font-size: 25px;
+            background-color: #e8e8e8;
+        }
+        
+        .header {
+                overflow: hidden;
+                padding: 50px 50px;
+                background-color: white;
+                background-image: url('header.png');
+                font-size: 35px;
+                color: #CC0000;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100%;
+            }
+        
+        nav {
+            float: left;
+            width: 40%;
+            background: #D3D3D3;
+            padding: 20px;
+            max-width: 160px;
+            margin: 0;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        article {
+            float: left;
+            padding: 20px;
+            width: 100%;
+            background-color: #f1f1f1;
+        }
+        
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        
+        section {
+            display: -webkit-flex;
+            display: flex;
+        }
+        
+        .button-nav {
+            background-color: #FFD13F;
+            width: 85%;
+            padding: 10px 10px;
+            font-size: 1.3rem;
+            position: relative;
+            border-radius: 15px;
+            border: none;
+            color: black;
+            appearance: button;
+            text-decoration: none;
+            color: initial;
+            text-align: center;
+        }
+        
+        .button-select {
+            background-color: #BBBBBB;
+            width: 85%;
+            padding: 10px 10px;
+            font-size: 1 rem;
+            position: relative;
+            border-radius: 15px;
+            border-width: 10px;
+            border-color: #AA0000;
+            color: black;
+            appearance: button;
+            text-decoration: none;
+            color: initial;
+            text-align: center;
+        }
+        
+        .button {
+            background-color: #FFD13F;
+            width: 15%;
+            padding: 10px 10px;
+            font-size: 1.3rem;
+            position: relative;
+            border-radius: 15px;
+            border: none;
+            color: black;
+            appearance: button;
+            text-decoration: none;
+            color: initial;
+            text-align: center;
+        }
+        
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="TUlogo.png" alt="logo" width="900" style="vertical-align: text-top;"><br>
+
+    </div>
+    <div class="navbar">
+        <label id="userInfoBar" style="font-size: 1.3rem; float: right;">นักศึกษา คณะวิทยาศาสตร์และเทคโนโลยี</label>
+
+    </div>
+    <section>
+        <nav>
+            <a href="U2_petition.html" class="button-nav" style="font-size: 15px;">ยื่นคำร้องเพิ่ม-ถอน</a><br><br>
+
+        </nav>
+        <article>
+            <h2 align="center"><b>เงื่อนไขสำหรับนักศึกษาในการยื่นคำร้องเพิ่ม-ถอนรายวิชา</b></h2>
+            <hr width=80% color="black" size="1"><br>
+            <label><label1></label1>1. นักศึกษาต้องดูการเปลี่ยนแปลงตารางสอน ตารางสอบ ก่อนการยื่นคำร้อง(กรณีโครงการพิเศษดูประกาศที่โครงการ)<br>
+					<label1></label1>2. การตรวจสอบผลโควตา<br>
+					<label2></label2>2.1 นักศึกษาปริญญาตรี โครงการปกติ ตรวจสอบผลโควตาตามปฏิทินกิจกรรม ชั้นปริญญาตรี<br>
+					<label2></label2>2.2 นักศึกษาระดับปริญญาตรี โครงการพิเศษ/นิติศาสตร์ ภาคบัณฑิต/บัณฑิตศึกษาโครงการ
+						ปกติและโครงการพิเศษ <br><label2></label2>ตรวจสอบตารางสอนที่คณะ/โครงการ<br>
+					<label1></label1>3. นักศึกษาต้องได้รับคำแนะนำในการวางแผนการยื่นคำร้องจากอาจารย์ที่ปรีกษาทุกครั้ง<br>
+					<label1></label1>4. ช่วงการยื่นคำร้องเพิ่ม-ถอนรายวิชาสามารถทำรายการได้หลายครั้งในช่วงเวลาที่ประกาศและทุกครั้ง
+						ที่ทำรายการ<br><label1></label1>นักศึกษาต้องยืนยันการทำรายการทุกครั้ง<br>
+					<label1></label1>5. นักศึกษาต้องดำเนินการยื่นคำร้องเพิ่ม-ถอนรายวิชาผ่านอินเตอร์เน็ตด้วยตนเองเท่านั้น ห้ามให้สิทธิ์ผู้อื่นดำเนิน
+						การแทน <br><label1></label1>หากมีข้อผิดพลาดถือเป็นความรับผิดชอบของนักศึกษา<br>
+					<label1></label1>7. การยื่นคำร้องสมบูรณ์ เมื่อมีการยืนยันผลการยื่นคำร้อง<br>
+					<label1></label1>8. หลังจากยืนยันผลการยื่นคำร้องเพิ่ม-ถอนรายวิชาและมีการยืนยันผลการยื่นคำร้องเรียบร้อยแล้ว สามารถตรวจสอบความถูกต้อง<br><label1></label1>ของข้อมูลได้จากเมนูผลการยื่นคำร้อง</label><br><br>
+            <p align="center"><label>เลือก จดทะเบียน เพื่อเข้าสู่ระบบการยื่นคำร้อง หรือ เลือก ยกเลิก เพื่อออกจากระบบ </label></p><br>
+
+            <p align="center">
+                </div><a href="U2_petition.html" class="button" style="font-size: 15px;">จดทะเบียน</a>
+                <a href="U2.html" class="button" style="font-size: 15px;">ยกเลิก</a></p><br><br>
+
+            <!--<div align="center"><button type="submit" id="submit" class="btn" >จดทะเบียน</button>
+						<button type="submit" id="submit" class="btn" >ยกเลิก</button>
+
+					</div><br><br>-->
+
+        </article>
+    </section>
+    <footer>
+        <p align="right">Group1-100001
+            <p>
+    </footer>
+
+</body>
+<script src="userDetail.js"></script>
+
+</html>

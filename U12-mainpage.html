@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  
+    <head >
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300&display=swap" rel="stylesheet">
+		
+		
+		<title>คำร้องขอเพิ่ม-ถอนรายวิชา</title>
+		<style>
+			body {
+				font-family: IBM Plex Sans Thai Looped;
+	  			background-color: #EEEEEE;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+			}
+			input{
+	            font-family:kanit;
+	            border: 0;
+	        }
+			.header {
+    			overflow: hidden;
+    			padding: 50px 50px;
+    			background-color: white;
+    			background-image: url('header.png');
+  				font-size: 35px;
+  				color: #CC0000;
+  				background-repeat: no-repeat;
+          		background-attachment: fixed;
+          		background-size: 100%;
+   			}
+	        .navbar {
+  				overflow: hidden;
+  				background-color: #333;
+  				color: white;
+  			}
+			.header-right {
+  				float: right;
+			}
+  			nav {
+  				float: left;
+  				width: 40%;
+  				background: #D3D3D3;
+  				padding: 20px;
+  				max-width: 160px;
+    			margin: 0;
+
+			}
+			nav ul {
+  				list-style-type: none;
+  				padding: 0;
+			}
+			article {
+  				float: left;
+  				padding: 20px;
+  				width: 100%;
+  				background-color: #f1f1f1;
+			}
+			footer {
+  				background-color: #777;
+  				padding: 10px;
+  				text-align: center;
+  				color: white;
+			}
+			section {
+  				display: -webkit-flex;
+  				display: flex;
+			}
+			h3{
+            	font-size: 25px;
+            	background-color: #e8e8e8;
+            }
+            .button{ 
+	            background-color: #FFD700;
+	            width: 85%;
+	            padding: 10px 10px;
+	            font-size: 1.3rem;
+	           	position: relative;
+	           	border-radius: 15px;
+	           	border: none;
+	           	color: black;
+    			appearance: button;
+    			text-decoration: none;
+    			color: initial;
+    			text-align: center;
+	        }
+	        .button-select { 
+	            background-color: #BBBBBB;
+	            width: 85%;
+	            padding: 10px 10px;
+	            font-size: 1 rem;
+	           	position: relative;
+	           	border-radius: 15px;
+	           	border-width: 10px;
+	           	border-color: #AA0000;
+	           	color: black;
+    			appearance: button;
+    			text-decoration: none;
+    			color: initial;
+    			text-align: center;
+	        }
+	        #wait{
+	        	font-size: 15px;
+	        }
+	        #wait_botton{
+	        	margin-top: 10px;
+	        }
+		</style>
+     </head>
+     <body onload="notificationUser12()">
+     	<div class="header">
+     		<img src="TULogo.png" alt="logo" width="900" style="vertical-align: text-top;"><br>
+    
+     	</div>
+     	<div class="navbar">
+     		<label style="font-size: 1.3rem; float: right;">คณบดี คณะวิทยาศาสตร์และเทคโนโลยี</label>
+     		
+     	</div>
+     	<section>
+     		<nav>
+     			<!--<a href="U12-wait.html" class="button">CS264</a><br><br>
+     			<a href="U12-wait.html" class="button">CSXXX</a><br><br>
+     			<a href="U12-wait.html" class="button">CSXXX</a><br><br>-->
+     			<a href="U12-wait.html" class="button" id="wait_botton"><p id="wait">รายชื่อรอการอนุมัติ</p></a><br><br>
+
+     			<br><br><br><br><br><br>
+     			<a href="login.html" class="button" style="font-size: 15px;">ออกจากระบบ</a>
+
+     			
+     		</nav>
+     		<article>
+     			<div id="notifyList" class="container" style="background-color:aliceblue; height: 400px; margin-top: 10px;">
+                <h3 style="text-align: center; margin-top: 8px;">รายการการแจ้งเตือน</h3>
+     			
+     			
+     
+     		</article>
+
+     	</section>
+     	
+     	<footer>
+     		<p align="right">Group1-100001<p>
+     	</footer>
+    </body>
+    <script src="U10_script.js"></script>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  
+    <head >
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300&display=swap" rel="stylesheet">
+		
+		
+		<title>คำร้องขอเพิ่ม-ถอนรายวิชา</title>
+		<style>
+			body {
+				font-family: IBM Plex Sans Thai Looped;
+		  			background-color: #EEEEEE;
+					background-repeat: no-repeat;
+					background-attachment: fixed;
+					background-size: cover;
+			}
+			input{
+	            font-family:kanit;
+	            border: 0;
+	        }
+			.header {
+    			overflow: hidden;
+    			padding: 50px 50px;
+    			background-color: white;
+    			background-image: url('header.png');
+  				font-size: 35px;
+  				color: #CC0000;
+  				background-repeat: no-repeat;
+          		background-attachment: fixed;
+          		background-size: 100%;
+   			}
+	        .navbar {
+  				overflow: hidden;
+  				background-color: #333;
+  				color: white;
+  			}
+			.header-right {
+  				float: right;
+			}
+  			nav {
+  				float: left;
+  				width: 40%;
+  				background: #D3D3D3;
+  				padding: 20px;
+  				max-width: 160px;
+    			margin: 0;
+
+			}
+			nav ul {
+  				list-style-type: none;
+  				padding: 0;
+			}
+			article {
+  				float: left;
+  				padding: 20px;
+  				width: 100%;
+			}
+			footer {
+  				background-color: #777;
+  				padding: 10px;
+  				text-align: center;
+  				color: white;
+			}
+			section {
+  				display: -webkit-flex;
+  				display: flex;
+			}
+			h3{
+            	font-size: 25px;
+            	background-color: #e8e8e8;
+            	text-align: center;
+            }
+            .button {
+				background-color: #DDDDDD;
+				cursor: pointer;
+				width: 100%;
+				border: none;
+				padding: 10px 10px;
+				color: black;
+				display: inline-block;
+				margin: 15px 0px;
+				position: relative;
+				text-decoration: none;
+				border-radius: 15px;
+				border-width: 10px;
+				text-align: center;  		
+				font-size: 1rem;
+				font-family : IBM Plex Sans Thai Looped;
+			}
+
+	        .button:hover {
+  				background-color: #CCCCCC;
+					}
+					
+			.button-select {
+				background-color: #BBBBBB;
+				cursor: pointer;
+				width: 100%;
+				border: none;
+				padding: 10px 10px;
+				color: black;
+				display: inline-block;
+				margin: 15px 0px;
+				position: relative;
+				text-decoration: none;
+				border-radius: 15px;
+				border-width: 10px;
+				text-align: center;  		
+				font-size: 1rem;
+				font-family : IBM Plex Sans Thai Looped;
+			}
+	        .button-name { 
+	            /*background-color: #f1f1f1;*/
+	            cursor: pointer;
+	            width: 95%;
+	            padding: 20px 20px;
+	            font-size: 5 rem;
+	           	position: relative;
+	           	border-width: 10px;
+	           	border-color: #AA0000;
+	           	color: black;
+    			appearance: button;
+    			text-decoration: none;
+    			color: initial;
+    			text-align: center;
+	        }
+
+	        table th, td, user {
+	        	padding: 15px;
+	        	border:1px solid black;
+			}
+
+	        .center {
+  				margin-left: auto;
+  				margin-right: auto;
+				}
+	        tr:hover {background-color: #BBBBBB;}
+
+		</style>
+     </head>
+     <body onload='loadDoc()'>
+     	<div class="header">
+     		<img src="TULogo.png" alt="logo" width="900" style="vertical-align: text-top;"><br>
+     	</div>
+     	<div class="navbar">
+     		<label style="font-size: 1.3rem; float: right;">คณบดี คณะวิทยาศาสตร์และเทคโนโลยี</label>
+     		
+    	</div>
+
+     	<section>
+			<nav>
+				<h2> 
+					<button type="button" onclick="wait()" class="button-select">รอการอนุมัติ</button>
+					<button type="button" onclick="approve()" class="button">อนุมัติแล้ว</button>
+					<button type="button" onclick="cancel()" class="button">ยกเลิกการอนุมัติ</button><br><br><br><br><br><br>
+					<button type="button" onclick="window.location.href='U12-mainpage.html'" class="button">กลับหน้าหลัก</button>
+				</h2>
+			</nav>
+     		<article>
+     			<h3>รายการคำร้องขอเพิ่ม-ถอนรายวิชาของนักศึกษา</h3>
+     			<table style="width:80%" class="center" id="table">
+     			<tbody>
+     				<tr>
+     					<th>รายชื่อนักศึกษาที่รอการพิจารณา</th>
+     				</tr>
+
+     			</tbody>
+     				
+     				
+     			</table>
+     			    			
+     		</article>
+
+     	</section>
+     	
+     	<footer>
+     		<p align="right">Group1-100001<p>
+     	</footer>
+    </body>
+	<script src="controller_U12.js"></script>
+</html>

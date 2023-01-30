@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  
+    <head >
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300&display=swap" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<title>คำร้องขอเพิ่ม-ถอนรายวิชา</title>
+		<style>
+			body {
+				font-family: IBM Plex Sans Thai Looped;
+	  			background-color: whitesmoke;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+			}
+			input{
+	            font-family:kanit;
+	            border: 0;
+	                }
+	        textarea{
+	        	font-family:kanit;
+	            border: 0;
+	        }
+			button{ 
+	            background-color: gray;
+	            padding: 5px 10px;
+	            font-size: 1.3rem;
+	           position: relative;
+	        }
+	        td{
+	        	text-align: center;
+	        	font-size: 100%;
+	        }
+	        tr:hover {
+				background-color: #c1c1c1;
+			}
+			th {
+				margin:auto;
+				text-align: center;
+				background-color: #c1c1c1;
+			}
+	        input.table{
+	        	background-color: #c1c1c1;
+	        }
+	        label2{
+	        	color: black;
+                display: inline-block;
+                width: 270px;
+                margin-bottom: 10px;
+                }
+            label1{
+            	color: red;
+            }
+            h1{
+            	font-size: 50px;
+            }
+            h3{
+            	font-size: 25px;
+            	background-color: #e8e8e8;
+            }
+            .header {
+    			overflow: hidden;
+    			padding: 50px 50px;
+    			background-color: white;
+    			background-image: url('header.png');
+  				font-size: 35px;
+  				color: #CC0000;
+  				background-repeat: no-repeat;
+          		background-attachment: fixed;
+          		background-size: 100%;
+   			}
+			.header-right {
+  				float: right;
+			}
+  			nav {
+  				float: left;
+  				width: 40%;
+  				background: #D3D3D3;
+  				padding: 20px;
+  				max-width: 160px;
+    			margin: 0;
+
+			}
+			nav ul {
+  				list-style-type: none;
+  				padding: 0;
+			}
+			article {
+  				float: left;
+  				padding: 20px;
+  				width: 100%;
+  				background-color: #f1f1f1;
+			}
+			footer {
+  				background-color: #777;
+  				padding: 10px;
+  				text-align: center;
+  				color: white;
+			}
+			section {
+  				display: -webkit-flex;
+  				display: flex;
+			}
+			.button-nav { 
+	            background-color: #FFD13F;
+	            width: 85%;
+	            padding: 10px 10px;
+	            font-size: 1.3rem;
+	           	position: relative;
+	           	border-radius: 15px;
+	           	border: none;
+	           	color: black;
+    			appearance: button;
+    			text-decoration: none;
+    			color: initial;
+    			text-align: center;
+	        }
+	        .button-select { 
+	            background-color: #BBBBBB;
+	            width: 85%;
+	            padding: 10px 10px;
+	            font-size: 1 rem;
+	           	position: relative;
+	           	border-radius: 15px;
+	           	border-width: 10px;
+	           	border-color: #AA0000;
+	           	color: black;
+    			appearance: button;
+    			text-decoration: none;
+    			color: initial;
+    			text-align: center;
+	        }
+	        img.a {
+  				vertical-align: baseline;
+			}
+			.navbar {
+  				overflow: hidden;
+  				background-color: #333;
+  				color: white;
+			}
+
+
+			
+		</style>
+     </head>
+     <body>
+     	<div class="header">
+     		<img src="TUlogo.png" alt="logo" width="900" style="vertical-align: text-top;"><br><br>
+
+
+
+     		
+     	</div>
+     	<div class="navbar">
+     		<label id="userInfoBar" style="font-size: 1.3rem; float: right;">นักศึกษา คณะวิทยาศาสตร์และเทคโนโลยี</label>
+     		
+     	</div>
+     	<section>
+     		<nav>
+     			<a href="U2_condition.html"class="button-nav" style="font-size: 15px;" >ยื่นคำร้องเพิ่ม-ถอน</a><br><br>
+     			<a href="U5.html" class="button-nav" style="font-size: 15px;">แก้ไขขอคำร้อง</a><br><br>
+     			<a href="U6.html" class="button-nav" style="font-size: 15px;">ยกเลิกขอคำร้อง</a><br><br>
+     			<a href="U7.html" class="button-nav" style="font-size: 15px;">ติดตามผลคำร้อง</a><br><br>
+
+
+     			<br><br><a href="login.html" class="button-nav" style="font-size: 15px;">ออกจากระบบ</a>
+     			
+     		</nav>
+     		<article>
+     			<label><i>ยินดีต้อนรับ......</label>
+     			
+     			
+     		</article>
+     		</section>
+     		<footer>
+     			<p align="right">Group1-100001<p>
+     		</footer>
+     	
+    </body>
+    <script src="userDetail.js"></script>
+</html>

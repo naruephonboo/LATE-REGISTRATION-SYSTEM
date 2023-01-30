@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>เจ้าหน้าที่ภาควิชาตรวจสอบความถูกต้องของเอกสาร</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300&display=swap" rel="stylesheet">
+	<style>
+* {box-sizing: border-box;}
+
+body {
+        font-family: IBM Plex Sans Thai Looped;
+          background-color: #EEEEEE;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      input{
+              font-family:kanit;
+              border: 0;
+          }
+
+.header {
+          overflow: hidden;
+          padding: 50px 50px;
+          background-color: white;
+          background-image: url('header.png');
+          font-size: 35px;
+          color: #CC0000;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100%;
+        }
+          .navbar {
+          overflow: hidden;
+          background-color: #333;
+          color: white;
+        }
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+
+.header-left{
+	float: left;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the navigation menu */
+nav {
+      text-align: center;
+      width: 250px ;
+      background: #CCC; 
+      float: left;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  float: left;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+.dropbtn {
+  background-color: #FDD017;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #BBBBBB;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+.button {
+  background-color: #C1C1C1; 
+  border: none;
+  color: black;
+  width: 150px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button2 {background-color: #f44336; padding: 15px;} 
+.button3 {background-color: #7FFF00; padding: 15px;} 
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: left;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+.info{
+  margin: center;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+.button-nav { 
+              background-color: #FFD13F;
+              width: 85%;
+              padding: 10px 10px;
+              font-size: 1.3rem;
+              position: relative;
+              border-radius: 15px;
+              border: none;
+              color: black;
+          appearance: button;
+          text-decoration: none;
+          color: initial;
+          text-align: center;
+          }
+
+    h5{
+    border: 1px solid black;
+    background-color: #d58be7;
+      font-size: 20px;
+      text-align: left;
+    }
+
+    h6{
+    font-size: 15px;
+    padding-left: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+  }
+</style>
+
+
+</head>
+<body onload="loadData()">
+	<div class="header">
+		<img src="TULogo.png" alt="logo" width="900" style="vertical-align: text-top;"><br>
+	</div>
+  <div class="navbar">
+        <label style="font-size: 1.3rem; float: right;">เจ้าหน้าที่ คณะวิทยาศาสตร์และเทคโนโลยี</label>
+        
+  </div>
+<section>
+	  <nav>
+      <br>
+    	<div class="dropdown">
+  		<button onclick="myFunction()" class="dropbtn">แบบคำร้องของนักศึกษา</button>
+  		<div id="myDropdown" class="dropdown-content">
+    	<a href="#home">แบบคำร้องที่รอการตรวจสอบ</a>
+    	<a href="#about">แบบคำร้องที่ไม่ผ่านการอนุมัติ</a>
+    	<a href="#contact">แบบคำร้องที่ผ่านการอนุมัติ</a>
+      	</div><br><br>
+      	<button class="dropbtn">ข้อมูลรายวิชาและอาจารย์</button><br><br>
+        <br><br><a href="U9.html"class="button-nav">ย้อนกลับ</a><br><br>
+  		</div>
+	
+  	  </nav>
+
+  	<article>
+      <h5>ข้อมูลส่วนตัว</h5>
+      <form id="form">
+        <h6>
+          <label>วันที่ :</label><label id="date"style="margin-left:10px ;"></label><br>
+        <label >ชื่อ - นามสกุล: </label><label id="name" style="margin-left:10px ;"></label><label id="surname" style="margin-left:15px ;"></label><br>
+
+        <label >เลขทะเบียน: </label><label id="snumber" style="margin-left:10px ;"></label><br>
+        
+        <label >ชั้นปีที่: </label><label id="year" style="margin-left:10px ;"></label><br>
+        
+        <label >สาขาวิชา: </label><label id="field" style="margin-left:10px ;"></label><br>
+        
+        <label >อาจารย์ที่ปรึกษา: </label><label id="professor" style="margin-left:10px ;"></label><br>
+        
+        <label >บ้านเลขที่: </label><label id="address" style="margin-left:10px ;"></label><br>
+        
+        <label >หมู่ที่: </label><label id="moo" style="margin-left:10px ;"></label><br>
+        
+        <label >ตำบล: </label><label id="tumbol" style="margin-left:10px ;"></label><br>
+
+        <label >อำเภอ: </label><label id="amphur" style="margin-left:10px ;"></label><br>
+        
+        <label >จังหวัด: </label><label id="county" style="margin-left:10px ;"></label><br>
+        
+        <label >รหัสไปรษณีย์: </label><label id="postcode" style="margin-left:10px ;"></label><br>
+        
+        <label >เบอร์โทรศัพท์มือถือ: </label><label id="sphone" style="margin-left:10px ;"></label><br>
+        
+        <label >เบอร์โทรศัพท์บ้าน: </label><label id="hphone" style="margin-left:10px ;"></label><br>
+        </h6>
+
+        <h5>รายละเอียดการเพิ่ม-ถอนรายวิชา</h5>
+        
+        <h6>
+        <label >รายวิชาที่เพิ่ม: </label><label id="addSubject" style="margin-left:10px ;"></label><br>
+        <label >ชื่อวิชาที่เพิ่ม: </label><label id="asubjectName"></label><br>
+        <label >Section: </label><label id="asubjectSection"></label><br>
+        <label >วัน-เวลา: </label><label id="asubjectDate"></label><br>
+        <label >หน่วยกิต: </label><label id="asubjectCredit"></label><br>
+        <label >ชื่อครูผู้สอน: </label><label id="asubjectTeacher"></label><br>
+        <label >ผู้สอนอนุญาติ: </label><label id="asubjectTeacherCheck"></label><br><br>
+        
+        <label>รายวิชาที่ถอน: </label><label id="dropSubject" style="margin-left:10px ;"></label><br>
+        <label >ชื่อวิชาที่ถอน: </label><label id="dsubjectName"></label><br>
+        <label >Section: </label><label id="dsubjectSection"></label><br>
+        <label >วัน-เวลา: </label><label id="dsubjectDate"></label><br>
+        <label >หน่วยกิต: </label><label id="dsubjectCredit"></label><br>
+        <label >ชื่อครูผู้สอน: </label><label id="dsubjectTeacher"></label><br>
+        <label >ผู้สอนอนุญาติ: </label><label id="dsubjectTeacherCheck"></label><br><br>
+        
+        <label >เหตุผลที่เพิ่ม-ถอนรายวิชา: </label><label id="reason" style="margin-left:10px ;"></label><br>
+        </h6>
+
+    <button class="button button2" type="submit" id="cancle">ไม่อนุมัติคำร้อง </button>
+    <button class="button button3" type="submit" id="approve" >อนุมัติการส่งคำร้อง</button><br><br>
+      </form>
+
+  </article>
+
+</section>
+
+</body>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+<script type="text/javascript" src="controller_u9.js"></script>
+
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="controlleru7.js"></script>
+    <title>คำร้องขอเพิ่ม-ถอนรายวิชา</title>
+    <style>
+        body {
+            font-family: IBM Plex Sans Thai Looped;
+            background-color: whitesmoke;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        
+        input {
+            font-family: kanit;
+            border: 0;
+        }
+        
+        textarea {
+            font-family: kanit;
+            border: 0;
+        }
+        
+        button {
+            background-color: gray;
+            padding: 5px 10px;
+            font-size: 1.3rem;
+            position: relative;
+        }
+        
+        h3 {
+            font-size: 25px;
+            background-color: #e8e8e8;
+        }
+        
+        .header {
+                overflow: hidden;
+                padding: 50px 50px;
+                background-color: white;
+                background-image: url('header.png');
+                font-size: 35px;
+                color: #CC0000;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100%;
+            }
+        
+        .header-right {
+            float: right;
+        }
+        
+        nav {
+            float: left;
+            width: 40%;
+            background: #D3D3D3;
+            padding: 20px;
+            max-width: 160px;
+            margin: 0;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        article {
+            float: left;
+            padding: 20px;
+            width: 100%;
+            background-color: #f1f1f1;
+        }
+        
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        
+        section {
+            display: -webkit-flex;
+            display: flex;
+        }
+        
+        .button-nav {
+            background-color: #FFD13F;
+            width: 85%;
+            padding: 10px 10px;
+            font-size: 1.3rem;
+            position: relative;
+            border-radius: 15px;
+            border: none;
+            color: black;
+            appearance: button;
+            text-decoration: none;
+            color: initial;
+            text-align: center;
+        }
+        
+        .button-select {
+            background-color: #BBBBBB;
+            width: 85%;
+            padding: 10px 10px;
+            font-size: 1 rem;
+            position: relative;
+            border-radius: 15px;
+            border-width: 10px;
+            border-color: #AA0000;
+            color: black;
+            appearance: button;
+            text-decoration: none;
+            color: initial;
+            text-align: center;
+        }
+        
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            color: white;
+        }
+        
+        body {
+            margin: 0;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        .button {
+            background-color: #FCD33E;
+            color: #8B0000;
+            width: 140px;
+            height: 30px;
+            border-color: #8B0000;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+        
+        .button:hover {
+            background-color: #F4B453;
+            color: #8B0000;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td {
+            border: 1px solid #696969;
+            padding: 8px;
+            background-color: #F8F8FF;
+        }
+        
+        th {
+            padding-left: 8px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #808080;
+            border: 1px solid #696969;
+            color: white;
+        }
+        /* The Modal (background) */
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        /* Modal Content/Box */
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        /* The Close Button */
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript" src="data.json"></script>
+    <script type="text/javascript">
+    </script>
+
+</head>
+
+<body onload="init()">
+    <div class="header">
+        <img src="TUlogo.png" alt="logo" width="900" style="vertical-align: text-top;"><br><br>
+    </div>
+    <div class="navbar">
+        <label id="userInfoBar" style="font-size: 1.3rem; float: right; padding-right: 10px;">นักศึกษา คณะวิทยาศาสตร์และเทคโนโลยี</label>
+    </div>
+    <section>
+        <nav>
+
+            <a href="U2.html" class="button-nav" style="font-size: 15px;">ย้อนกลับ</a><br><br>
+            <br><br><br><br><br><br><br><br><br><br>
+        </nav>
+        <article>
+            <label style="font-size: 20px;"><b>ติดตามผลการยื่นคำร้อง</b></label>
+            <!--<button id="myBtn" class="button">เพิ่มรายการ</button>
+			<button id="myBtn1" class="button"  onclick="AddRowFunction();">นักศึกษา</button>-->
+            <hr style="background-color: #8B0000; height: 3px; border: none;">
+            <hr style="background-color: #F4B453; height: 3px; border: none;"><br>
+            <table id="student" style="width:100%">
+                <tr>
+                    <th style="width: 15%; text-align: center;">วันที่ยื่นคำร้อง</th>
+                    <th style="width: 40%;">รายละเอียด</th>
+                    <th style="width: 30%; text-align: center;">สถานะ</th>
+                    <th style="width: 15%; text-align: center;">หมายเหตุ</th>
+                </tr>
+
+            </table>
+            </div>
+
+            <!-- The Modal
+		<div id="myModal" class="modal">
+  			Modal content 
+  			<div class="modal-content">
+  				<span class="close">&times;</span>
+  				<label for="fname">วันที่ยื่นคำร้อง:</label>
+				<input type="text" id="requestdate" name="requestdate"><br>
+				<label for="fname">ประเภทคำร้อง</label>
+				<select name=\"dRequest\" id=\"case\">
+					<option value=\"case1\">คำร้อง1</option><option value=\"case2\">คำร้อง2</option>
+				</select><br>
+				<label for="fname">รายละเอียด</label>
+				<input type="text" id="desc" name="desc" style="background-color: #DCDCDC;"><br>
+				<button type="button" onclick="AddRowFunction();" class="button">เพิ่มรายการ</button>
+  			</div>
+		</div>-->
+        </article>
+    </section>
+    <footer>
+        <p align="right">Group1-100001
+            <p>
+    </footer>
+</body>
+<!--<script>
+		// Get the modal
+		var modal = document.getElementById("myModal");
+		const d = new Date();
+		var desc = document.getElementById("desc");
+		var requestdate = document.getElementById("requestdate");
+		//desc.text="xxxx";
+		requestdate.value=d.toLocaleString();
+		// Get the button that opens the modal
+		var btn = document.getElementById("myBtn");
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+		// When the user clicks the button, open the modal 
+		btn.onclick = function() {
+		  	modal.style.display = "block";
+		}
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+		  	modal.style.display = "none";
+		}
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		  	if (event.target == modal) {
+		    	modal.style.display = "none";
+		  	}
+		}
+	</script>
+    <script src="controller.js"></script>-->
+    <script src="userDetail.js"></script>
+
+</html>
